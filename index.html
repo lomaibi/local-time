@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <div id="digital">
+         <h3 id="clock">HOUR: MIN: SEC</h3>
+         <div id="image">
+            <button onclick="getimage">get image</button>
+
+         </div>
+
+
+
+        </div>
+        <script>
+            function getTime(){
+            let day =new (Date);
+            //getting the current in hour, mins and 
+            let hour = day.getHours();
+            let hour_conv = hour-12;
+            let mins =day.getMinutes();
+            let secs =day.getSeconds();
+            console.log(hour_conv, mins, secs);
+            //put it on the page
+            let tag = document.getElementById("clock");
+            let clockcode= `<div>         
+                <h3 id="clock">${hour_conv}:${mins}:${secs}</h3>
+
+                
+                               </div>`
+                               tag.innerHTML=clockcode;            
+            }
+            getTime();
+            setInterval(getTime, 1000)
+
+            //input image inside your html using javascript
+            function getImag(){
+                let image =document.createElement('img');
+                let div =document.getElementById('image');
+
+               // image.src= '/image/FLOWER.jpg';
+               img.src='FLOWER3.jpg';
+                div.appendchild(image);
+            }
+;        </script>
+</body>
+</html>
